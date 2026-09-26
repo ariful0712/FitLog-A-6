@@ -10,7 +10,6 @@ const Library = () => {
 
   // Sort option
   const [sortBy, setSortBy] = useState("duration");
-
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
@@ -28,7 +27,6 @@ const Library = () => {
         setLoading(false);
       }
     };
-
     fetchWorkouts();
   }, []);
 
@@ -37,15 +35,12 @@ const Library = () => {
     if (sortBy === "duration") {
       return Number(a.duration) - Number(b.duration);
     }
-
     if (sortBy === "calories") {
       return Number(a.caloriesBurned) - Number(b.caloriesBurned);
     }
-
     if (sortBy === "rating") {
       return Number(b.rating) - Number(a.rating);
     }
-
     return 0;
   });
 
@@ -105,14 +100,11 @@ const Library = () => {
           <h2 className="text-4xl md:text-5xl font-black mt-2">
             THE LIBRARY
           </h2>
-
           <p className="text-gray-400 mt-3">
             Twelve lifts covering every major muscle group.
           </p>
 
-          {/* Sort Dropdown */}
           <div className="mt-6 flex items-center gap-3">
-
             <label
               htmlFor="sort"
               className="text-gray-400 font-bold"
@@ -129,7 +121,6 @@ const Library = () => {
               <option value="duration">
                 Duration
               </option>
-
               <option value="calories">
                 Calories
               </option>
@@ -138,23 +129,18 @@ const Library = () => {
                 Rating
               </option>
             </select>
-
           </div>
-
         </div>
 
         {/* Workout Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
           {sortedWorkouts.map((workout) => (
             <WorkoutCard
               key={workout.id}
               workout={workout}
             />
           ))}
-
         </div>
-
       </div>
     </section>
   );

@@ -14,7 +14,7 @@ const WorkoutCard = ({ workout }) => {
           />
         </div>
 
-        {/* Content */}
+
         <div className="p-5">
 
           <div className="flex gap-2 flex-wrap mb-4">
@@ -28,7 +28,7 @@ const WorkoutCard = ({ workout }) => {
             ))}
           </div>
 
-          {/* Name */}
+
           <h2 className="text-xl font-black text-white uppercase">
             {workout.name}
           </h2>

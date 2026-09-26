@@ -8,7 +8,6 @@ const Hero = () => {
           <p className="text-[#ccff00] font-bold tracking-[0.2em] text-sm mb-5">
             WORKOUT LIBRARY
           </p>
-
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-none tracking-tight">
             TRAIN WITH INTENT.
             <br />
@@ -19,7 +18,6 @@ const Hero = () => {
             FitLog is a dark, no-nonsense gym companion: pick a lift,
             lock it into today&apos;s plan, and watch the week&apos;s work add up.
           </p>
-
           <a
             href="#library"
             className="inline-flex items-center gap-2 mt-8 bg-[#ccff00] text-black px-6 py-3 rounded-full font-bold hover:bg-[#b8e600] transition"

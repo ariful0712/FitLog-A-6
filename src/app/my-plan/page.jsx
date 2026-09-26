@@ -126,8 +126,10 @@ const {
             </h2>
 
             <p className="text-gray-400 mt-3">
-              Browse the library and add a lift to get today moving.
-            </p>
+               {activeTab === "plan"
+                ? "Browse the library and add a lift to get today moving."
+                  : "Save your favorite workouts here for later."}
+                    </p>
 
             <Link
               href="/"
@@ -149,14 +151,15 @@ const {
                 className="bg-[#181818] border border-gray-800 rounded-2xl p-5 flex flex-col md:flex-row gap-5"
               >
 
-                {/* Image */}
+
                 <img
                   src={workout.image}
                   alt={workout.name}
                   className="w-full md:w-48 h-40 object-cover rounded-xl"
                 />
 
-                {/* Content */}
+
+
                 <div className="flex-1">
 
                   <h2 className="text-2xl font-black uppercase">
@@ -167,21 +170,20 @@ const {
                     {workout.equipment}
                   </p>
 
-                  {/* Stats */}
-                  <div className="flex flex-wrap gap-5 mt-4 text-sm text-gray-300">
 
+                  <div className="flex flex-wrap gap-5 mt-4 text-sm text-gray-300">
                     <span>
+
                       ⏱ {workout.duration} min
                     </span>
 
                     <span>
                       🔥 {workout.caloriesBurned} kcal
                     </span>
-
+                    
                     <span>
                       ⭐ {workout.rating}
                     </span>
-
                   </div>
 
                   {/* Buttons */}

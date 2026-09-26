@@ -172,8 +172,6 @@ export const PlanProvider = ({ children }) => {
   // SAVE FOR LATER
   const saveWorkout = (workout) => {
     const currentSaved = getSaved();
-
-    // Already saved
     if (currentSaved.some((item) => item.id === workout.id)) {
       return false;
     }
@@ -186,16 +184,17 @@ export const PlanProvider = ({ children }) => {
       "fitlog-saved",
       JSON.stringify(newSaved)
     );
-
     notifyUpdate();
 
     return true;
   };
 
-  // REMOVE FROM SAVED
-  const removeFromSaved = (id) => {
-    const currentSaved = getSaved();
 
+  const removeFromSaved = (id) => {
+
+
+    const currentSaved = getSaved();
+    
     const newSaved = currentSaved.filter(
       (item) => item.id !== id
     );
@@ -227,7 +226,8 @@ export const PlanProvider = ({ children }) => {
   );
 };
 
-// Custom hook
+
+
 export const usePlan = () => {
   return useContext(PlanContext);
 };
