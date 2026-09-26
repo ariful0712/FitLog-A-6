@@ -6,6 +6,7 @@ import WorkoutCard from "./workoutCard";
 const Library = () => {
   const [workouts, setWorkouts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   // Sort option
   const [sortBy, setSortBy] = useState("duration");
@@ -22,6 +23,7 @@ const Library = () => {
         setWorkouts(data);
       } catch (error) {
         console.log("Failed to load workouts:", error);
+        setError("Failed to load workouts. Please try again.");
       } finally {
         setLoading(false);
       }
@@ -67,6 +69,24 @@ const Library = () => {
       </section>
     );
   }
+  if (error) {
+  return (
+    <section
+      id="library"
+      className="bg-[#111111] text-white py-20"
+    >
+      <div className="max-w-7xl mx-auto px-5 text-center">
+        <p className="text-red-400 text-xl font-bold">
+          {error}
+        </p>
+
+        <p className="text-gray-500 mt-3">
+          Please refresh the page and try again.
+        </p>
+      </div>
+    </section>
+  );
+}
 
   return (
     <section
