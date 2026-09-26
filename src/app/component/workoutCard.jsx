@@ -3,7 +3,7 @@ import Link from "next/link";
 const WorkoutCard = ({ workout }) => {
   return (
     <Link href={`/workout/${workout.id}`}>
-      <div className="bg-[#171717] border border-gray-800 rounded-xl overflow-hidden hover:border-[#ccff00] transition duration-300">
+      <div className="bg-[#171717] border border-gray-800 rounded-xl overflow-hidden hover:border-[#ccff00] hover:-translate-y-1 transition duration-300">
 
         {/* Image */}
         <div className="h-60 overflow-hidden">
@@ -17,7 +17,6 @@ const WorkoutCard = ({ workout }) => {
         {/* Content */}
         <div className="p-5">
 
-          {/* Category */}
           <div className="flex gap-2 flex-wrap mb-4">
             {workout.muscleGroups.map((group) => (
               <span
@@ -34,18 +33,21 @@ const WorkoutCard = ({ workout }) => {
             {workout.name}
           </h2>
 
-          {/* Equipment */}
           <p className="text-gray-400 text-sm mt-2">
             {workout.equipment}
           </p>
 
-          {/* Stats */}
+
           <div className="flex items-center justify-between mt-5 text-sm text-gray-300">
             <span>⏱ {workout.duration} min</span>
-
             <span>🔥 {workout.caloriesBurned} kcal</span>
-
             <span>⭐ {workout.rating}</span>
+          </div>
+
+          <div className="mt-5 pt-4 border-t border-gray-800">
+            <span className="text-[#ccff00] font-bold text-sm">
+              VIEW DETAILS →
+            </span>
           </div>
 
         </div>
