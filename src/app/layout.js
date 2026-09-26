@@ -11,18 +11,7 @@ export default function RootLayout({ children }) {
           <Navbar />
 
           {children}
-
-          <Toaster
-            position="top-right"
-            toastOptions={{
-              style: {
-                background: "#181818",
-                color: "#ffffff",
-                border: "1px solid #ccff00",
-              },
-            }}
-          />
-
+          <Toaster position="top-right" />
         </PlanProvider>
       </body>
     </html>
