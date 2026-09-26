@@ -1,12 +1,10 @@
 const Hero = () => {
   return (
     <section className="bg-[#111111] text-white">
-
       <div className="max-w-7xl mx-auto px-5 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
         {/* Left Side */}
         <div>
-
           <p className="text-[#ccff00] font-bold tracking-[0.2em] text-sm mb-5">
             WORKOUT LIBRARY
           </p>
@@ -29,26 +27,20 @@ const Hero = () => {
             BROWSE WORKOUTS
             <span>→</span>
           </a>
-
         </div>
 
-        {/* Right Side - Banner Image */}
-        <div className="flex justify-center">
-
-          <div className="w-full h-[400px] rounded-2xl overflow-hidden">
-
+        {/* Right Side - Hero Image */}
+        <div className="flex justify-center items-center">
+          <div className="w-full max-w-xl flex justify-center items-center">
             <img
               src="/banner.png"
               alt="FitLog workout"
-              className="w-full h-full object-cover"
+              className="w-full max-h-[500px] object-contain"
             />
-
           </div>
-
         </div>
 
       </div>
-
     </section>
   );
 };
